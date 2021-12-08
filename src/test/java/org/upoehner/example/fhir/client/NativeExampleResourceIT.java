@@ -1,4 +1,4 @@
-package org.upoehner;
+package org.upoehner.example.fhir.client;
 
 import io.quarkus.test.junit.NativeImageTest;
 

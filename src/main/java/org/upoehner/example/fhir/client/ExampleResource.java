@@ -1,4 +1,4 @@
-package org.upoehner;
+package org.upoehner.example.fhir.client;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
