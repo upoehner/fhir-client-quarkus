@@ -15,7 +15,7 @@
     </parent>
 
     <properties>
-        <hapi-fhir.version>5.4.0</hapi-fhir.version>
+        <hapi-fhir.version>5.6.0</hapi-fhir.version>
     </properties>
 
 
