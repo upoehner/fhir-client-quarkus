@@ -4,6 +4,9 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
 
+    <artifactId>fhir-client-quarkus</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
     <parent>
         <groupId>org.upoehner</groupId>
         <artifactId>quarkus-parent</artifactId>
@@ -12,21 +15,58 @@
     </parent>
 
     <properties>
-        <hapi-fhir-base.version>5.4.0</hapi-fhir-base.version>
+        <hapi-fhir.version>5.4.0</hapi-fhir.version>
     </properties>
 
-    <artifactId>fhir-client-quarkus</artifactId>
-    <version>1.0-SNAPSHOT</version>
+
 
     <dependencies>
+        <!-- base -->
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-arc</artifactId>
+        </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-resteasy</artifactId>
         </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-arc</artifactId>
+            <artifactId>quarkus-resteasy-jackson</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.jboss.logmanager</groupId>
+            <artifactId>log4j2-jboss-logmanager</artifactId>
+        </dependency>
+
+        <!-- monitoring -->
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-smallrye-health</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-micrometer-registry-prometheus</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-smallrye-openapi</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-smallrye-opentracing</artifactId>
+        </dependency>
+
+        <!-- code generation -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
+        <!-- test -->
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-junit5</artifactId>
@@ -38,15 +78,16 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- hapi fhir -->
         <dependency>
             <groupId>ca.uhn.hapi.fhir</groupId>
             <artifactId>hapi-fhir-client</artifactId>
-            <version>${hapi-fhir-base.version}</version>
+            <version>${hapi-fhir.version}</version>
         </dependency>
         <dependency>
             <groupId>ca.uhn.hapi.fhir</groupId>
             <artifactId>hapi-fhir-structures-r4</artifactId>
-            <version>${hapi-fhir-base.version}</version>
+            <version>${hapi-fhir.version}</version>
         </dependency>
 
     </dependencies>

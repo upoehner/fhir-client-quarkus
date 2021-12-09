@@ -22,7 +22,7 @@ public class FhirClientConfiguration {
     public IGenericClient createClient() {
         final IGenericClient client = FhirContext.forR4().newRestfulGenericClient(serverUrl);
 
-        if(user.isPresent() && password.isPresent()) {
+        if (user.isPresent() && password.isPresent()) {
             BasicAuthInterceptor basicAuth = new BasicAuthInterceptor(user.get(), password.get());
             client.registerInterceptor(basicAuth);
         }
