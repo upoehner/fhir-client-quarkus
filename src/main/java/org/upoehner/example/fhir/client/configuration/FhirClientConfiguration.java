@@ -1,4 +1,4 @@
-package org.upoehner.example.fhir.client.service;
+package org.upoehner.example.fhir.client.configuration;
 
 import ca.uhn.fhir.context.FhirContext;
 import ca.uhn.fhir.rest.client.api.IGenericClient;
