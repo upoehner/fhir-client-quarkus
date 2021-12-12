@@ -7,6 +7,11 @@ import org.hl7.fhir.r4.model.HumanName;
         //Base classes
         ca.uhn.fhir.context.FhirVersionEnum.class,
         ca.uhn.fhir.rest.client.apache.ApacheRestfulClientFactory.class,
+
+        //Interceptor for basic auth => Does not help
+        //ca.uhn.fhir.interceptor.executor.BaseInterceptorService.class,
+
+
         //R4 Context and Base classes
         org.hl7.fhir.r4.hapi.ctx.FhirR4.class,
         //R4 model classes -> located in org/hl7/fhir/r4/model/fhirversion.properties
