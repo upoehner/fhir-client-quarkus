@@ -2,9 +2,8 @@
 
 This project uses Quarkus and the HAPI FHIR client.
 
-## The Code is mainly based on the work of goafabric
-
-LINK!!
+## The Code is mainly based on the work of goafabric, which can be found here:
+https://github.com/goafabric/fhir-facade-quarkus
 
 > **_NOTE:_**  This project does not show how to use the HAPI FHIR client in detail. It is about how to configure it for building a native image.
 
