@@ -8,6 +8,8 @@ import org.eclipse.microprofile.config.inject.ConfigProperty;
 import javax.enterprise.context.ApplicationScoped;
 import java.util.Optional;
 
+import static ca.uhn.fhir.context.PerformanceOptionsEnum.DEFERRED_MODEL_SCANNING;
+
 public class FhirClientConfiguration {
     @ConfigProperty(name = "fhir.server")
     String serverUrl;
@@ -20,12 +22,15 @@ public class FhirClientConfiguration {
 
     @ApplicationScoped
     public IGenericClient createClient() {
-        final IGenericClient client = FhirContext.forR4().newRestfulGenericClient(serverUrl);
+        FhirContext context = FhirContext.forR4();
+        context.setPerformanceOptions(DEFERRED_MODEL_SCANNING);
+        final IGenericClient client = context.newRestfulGenericClient(serverUrl);
 
-        if(user.isPresent() && password.isPresent()) {
+        if (user.isPresent() && password.isPresent()) {
             BasicAuthInterceptor basicAuth = new BasicAuthInterceptor(user.get(), password.get());
             client.registerInterceptor(basicAuth);
         }
+
         return client;
     }
 }
