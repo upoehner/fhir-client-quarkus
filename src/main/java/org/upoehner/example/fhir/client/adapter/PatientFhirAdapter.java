@@ -10,6 +10,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+
 @Path("/patient")
 @Produces({MediaType.TEXT_PLAIN})
 public class PatientFhirAdapter {
@@ -24,4 +25,7 @@ public class PatientFhirAdapter {
         Patient p = fhirClient.read().resource(Patient.class).withId(id).execute();
         return p.getName().get(0).getGivenAsSingleString();
     }
+
+
+
 }

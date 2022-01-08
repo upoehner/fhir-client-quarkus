@@ -1,16 +1,17 @@
 package org.upoehner.example.fhir.client.configuration;
 
 import io.quarkus.runtime.annotations.RegisterForReflection;
-import org.hl7.fhir.r4.model.HumanName;
 
 @RegisterForReflection(targets= {
         //Base classes
         ca.uhn.fhir.context.FhirVersionEnum.class,
         ca.uhn.fhir.rest.client.apache.ApacheRestfulClientFactory.class,
 
-        //Interceptor for basic auth => Does not help
-        //ca.uhn.fhir.interceptor.executor.BaseInterceptorService.class,
-
+        //Interceptor for basic auth => Does not help?
+        ca.uhn.fhir.rest.client.interceptor.BasicAuthInterceptor.class,
+        ca.uhn.fhir.interceptor.executor.BaseInterceptorService.class,
+        ca.uhn.fhir.interceptor.executor.InterceptorService.class,
+        ca.uhn.fhir.interceptor.api.Pointcut.class,
 
         //R4 Context and Base classes
         org.hl7.fhir.r4.hapi.ctx.FhirR4.class,
