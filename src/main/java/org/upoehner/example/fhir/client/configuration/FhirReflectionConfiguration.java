@@ -8,10 +8,12 @@ import io.quarkus.runtime.annotations.RegisterForReflection;
         ca.uhn.fhir.rest.client.apache.ApacheRestfulClientFactory.class,
 
         //Interceptor for basic auth => Does not help?
+        /*
         ca.uhn.fhir.rest.client.interceptor.BasicAuthInterceptor.class,
         ca.uhn.fhir.interceptor.executor.BaseInterceptorService.class,
         ca.uhn.fhir.interceptor.executor.InterceptorService.class,
         ca.uhn.fhir.interceptor.api.Pointcut.class,
+       */
 
         //R4 Context and Base classes
         org.hl7.fhir.r4.hapi.ctx.FhirR4.class,
