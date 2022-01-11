@@ -4,8 +4,8 @@ import io.quarkus.runtime.annotations.RegisterForReflection;
 
 @RegisterForReflection(targets= {
         //Base classes
-        ca.uhn.fhir.context.FhirVersionEnum.class,
-        ca.uhn.fhir.rest.client.apache.ApacheRestfulClientFactory.class,
+    //ca.uhn.fhir.context.FhirVersionEnum.class,
+    //ca.uhn.fhir.rest.client.apache.ApacheRestfulClientFactory.class,
 
         //Interceptor for basic auth => Does not help?
         /*
@@ -16,7 +16,8 @@ import io.quarkus.runtime.annotations.RegisterForReflection;
        */
 
         //R4 Context and Base classes
-        org.hl7.fhir.r4.hapi.ctx.FhirR4.class,
+//org.hl7.fhir.r4.hapi.ctx.FhirR4.class,
+
         //R4 model classes -> located in org/hl7/fhir/r4/model/fhirversion.properties
         //looped through in ModelScanner.java -> scanVersionPropertyFile
         org.hl7.fhir.r4.model.StructureDefinition.class,
@@ -41,7 +42,7 @@ import io.quarkus.runtime.annotations.RegisterForReflection;
         org.hl7.fhir.r4.model.Narrative.class,
         org.hl7.fhir.r4.model.EnrollmentResponse.class,
         org.hl7.fhir.r4.model.ExampleScenario.class,
-        org.hl7.fhir.utilities.xhtml.XhtmlNode.class,
+//org.hl7.fhir.utilities.xhtml.XhtmlNode.class,
         org.hl7.fhir.r4.model.ImmunizationEvaluation.class,
         org.hl7.fhir.r4.model.MedicinalProductManufactured.class,
         org.hl7.fhir.r4.model.DeviceUseStatement.class,

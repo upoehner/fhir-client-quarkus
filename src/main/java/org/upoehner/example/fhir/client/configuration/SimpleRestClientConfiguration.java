@@ -1,7 +1,8 @@
-package org.upoehner.example.fhir.client.simplerest;
+package org.upoehner.example.fhir.client.configuration;
 
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.eclipse.microprofile.rest.client.RestClientBuilder;
+import org.upoehner.example.fhir.client.adapter.PatientRestFhirClient;
 
 import javax.enterprise.context.ApplicationScoped;
 import java.net.URI;

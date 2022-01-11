@@ -1,6 +1,5 @@
 package org.upoehner.example.fhir.client.adapter;
 
-import ca.uhn.fhir.rest.client.api.IGenericClient;
 import org.hl7.fhir.r4.model.Patient;
 
 import javax.inject.Inject;
@@ -10,22 +9,24 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-
-@Path("/patient")
+@Path("/rest")
 @Produces({MediaType.TEXT_PLAIN})
-public class PatientFhirAdapter {
+public class SimpleRestAdapter {
 
     @Inject
-    IGenericClient fhirClient;
+    PatientRestFhirClient simpleRestClient;
 
     @GET
-    @Path("getById/{id}")
-    public String getPatientById(@PathParam("id") String id) {
-
-        Patient p = fhirClient.read().resource(Patient.class).withId(id).execute();
+    @Path("getSimple/{id}")
+    public String useSimple(@PathParam("id") String id) {
+        Patient p = simpleRestClient.getPatientById(id);
         return p.getName().get(0).getGivenAsSingleString();
     }
 
-
+    @GET
+    @Path("getJson/{id}")
+    public String getJson(@PathParam("id") String id) {
+        return simpleRestClient.getJson(id);
+    }
 
 }

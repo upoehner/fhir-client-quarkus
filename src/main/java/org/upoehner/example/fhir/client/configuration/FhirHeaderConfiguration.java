@@ -1,4 +1,4 @@
-package org.upoehner.example.fhir.client.simplerest;
+package org.upoehner.example.fhir.client.configuration;
 
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.eclipse.microprofile.rest.client.ext.ClientHeadersFactory;
