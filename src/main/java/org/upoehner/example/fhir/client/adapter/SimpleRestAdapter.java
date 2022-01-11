@@ -22,16 +22,19 @@ public class SimpleRestAdapter {
     @GET
     @Path("getSimple/{id}")
     public String useSimple(@PathParam("id") String id) {
-        Patient p = simpleRestClient.getPatientById(id);
-        String retval = "Found Patient: ";
-        if (p.getName() != null && !p.getName().isEmpty()) {
-            for (Name n : p.getName()) {
-                retval += n.getGiven().stream().map(Object::toString).collect(Collectors.joining(", "));
-                retval += " " + n.getFamily();
+        Patient patient = simpleRestClient.getPatientById(id);
+        StringBuilder result = new StringBuilder();
+        result.append("Found Patient: ");
+
+        if (patient.getName() != null && !patient.getName().isEmpty()) {
+            for (Name name : patient.getName()) {
+                result.append(name.getGiven().stream().map(Object::toString).collect(Collectors.joining(", ")));
+                result.append(" ");
+                result.append(name.getFamily());
             }
         }
 
-        return retval;
+        return result.toString();
     }
 
     @GET
