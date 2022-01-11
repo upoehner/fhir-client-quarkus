@@ -10,18 +10,15 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "use",
-    "family",
-    "given"
+    "line"
 })
 @Generated("jsonschema2pojo")
-public class Name {
+public class Address {
 
     @JsonProperty("use")
     private String use;
-    @JsonProperty("family")
-    private String family;
-    @JsonProperty("given")
-    private List<String> given = null;
+    @JsonProperty("line")
+    private List<String> line = null;
 
     @JsonProperty("use")
     public String getUse() {
@@ -33,24 +30,14 @@ public class Name {
         this.use = use;
     }
 
-    @JsonProperty("family")
-    public String getFamily() {
-        return family;
+    @JsonProperty("line")
+    public List<String> getLine() {
+        return line;
     }
 
-    @JsonProperty("family")
-    public void setFamily(String family) {
-        this.family = family;
-    }
-
-    @JsonProperty("given")
-    public List<String> getGiven() {
-        return given;
-    }
-
-    @JsonProperty("given")
-    public void setGiven(List<String> given) {
-        this.given = given;
+    @JsonProperty("line")
+    public void setLine(List<String> line) {
+        this.line = line;
     }
 
 }

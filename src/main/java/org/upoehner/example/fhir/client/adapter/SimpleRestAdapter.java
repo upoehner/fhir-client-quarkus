@@ -1,6 +1,7 @@
 package org.upoehner.example.fhir.client.adapter;
 
 
+import org.upoehner.example.fhir.client.dto.ManagingOrganization;
 import org.upoehner.example.fhir.client.dto.Name;
 import org.upoehner.example.fhir.client.dto.Patient;
 
@@ -33,6 +34,10 @@ public class SimpleRestAdapter {
                 result.append(name.getFamily());
             }
         }
+
+        ManagingOrganization managingOrganization = patient.getManagingOrganization();
+        if(managingOrganization != null)
+            result.append("\nManaging Organisation: " + managingOrganization.getReference());
 
         return result.toString();
     }
