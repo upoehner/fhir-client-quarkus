@@ -91,14 +91,6 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- hapi fhir -->
-        <dependency>
-            <groupId>ca.uhn.hapi.fhir</groupId>
-            <artifactId>org.hl7.fhir.r4</artifactId>
-            <version>${hapi-fhir-r4.version}</version>
-        </dependency>
-
-
     </dependencies>
 
 </project>
